@@ -1,0 +1,20 @@
+[submodule "microservicio-persona"]
+	path = microservicio-persona
+	url = git@github.com:Nekstoreo/microservicio-persona.git
+	branch = main
+[submodule "microservicio-bootcamp"]
+	path = microservicio-bootcamp
+	url = git@github.com:Nekstoreo/microservicio-bootcamp.git
+	branch = main
+[submodule "microservicio-capacidad"]
+	path = microservicio-capacidad
+	url = git@github.com:Nekstoreo/microservicio-capacidad.git
+	branch = main
+[submodule "microservicio-tecnologia"]
+	path = microservicio-tecnologia
+	url = git@github.com:Nekstoreo/microservicio-tecnologia.git
+	branch = main
+[submodule "microservicio-reporte"]
+	path = microservicio-reporte
+	url = git@github.com:Nekstoreo/microservicio-reporte.git
+	branch = main
