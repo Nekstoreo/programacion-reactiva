@@ -1,0 +1,2255 @@
+{
+  "info": {
+    "_postman_id": "ca01305e-6c71-4c05-bf48-97d882ffedbd",
+    "name": "On-Class Services APIs",
+    "description": "Suite completa con captura automática de IDs mediante scripts",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43705198",
+    "_collection_link": "https://go.postman.co/collection/43705198-ca01305e-6c71-4c05-bf48-97d882ffedbd?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Setup - Technologies",
+      "item": [
+        {
+          "name": "Create - Spring Boot",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Technology created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('tech_spring_boot_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Spring Boot\", \"description\": \"Framework for building Java microservices\"}"
+            },
+            "url": {
+              "raw": "{{technology}}/technologies",
+              "host": [
+                "{{technology}}"
+              ],
+              "path": [
+                "technologies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Webflux",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Technology created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('tech_webflux_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Webflux\", \"description\": \"Reactive programming model for Spring\"}"
+            },
+            "url": {
+              "raw": "{{technology}}/technologies",
+              "host": [
+                "{{technology}}"
+              ],
+              "path": [
+                "technologies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - AWS",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Technology created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('tech_aws_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"AWS\", \"description\": \"Cloud platform for hosting and services\"}"
+            },
+            "url": {
+              "raw": "{{technology}}/technologies",
+              "host": [
+                "{{technology}}"
+              ],
+              "path": [
+                "technologies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Docker & Kubernetes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Technology created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('tech_docker_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Docker & Kubernetes\", \"description\": \"Containerization and orchestration tools\"}"
+            },
+            "url": {
+              "raw": "{{technology}}/technologies",
+              "host": [
+                "{{technology}}"
+              ],
+              "path": [
+                "technologies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - MySQL",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Technology created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('tech_mysql_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"MySQL\", \"description\": \"Relational database management system\"}"
+            },
+            "url": {
+              "raw": "{{technology}}/technologies",
+              "host": [
+                "{{technology}}"
+              ],
+              "path": [
+                "technologies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - CI/CD Tools",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Technology created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('tech_cicd_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"CI/CD Tools\", \"description\": \"Tools for continuous integration and deployment\"}"
+            },
+            "url": {
+              "raw": "{{technology}}/technologies",
+              "host": [
+                "{{technology}}"
+              ],
+              "path": [
+                "technologies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - PostgreSQL",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Technology created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('tech_postgres_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"PostgreSQL\", \"description\": \"Advanced open source database\"}"
+            },
+            "url": {
+              "raw": "{{technology}}/technologies",
+              "host": [
+                "{{technology}}"
+              ],
+              "path": [
+                "technologies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Redis",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Technology created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('tech_redis_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Redis\", \"description\": \"In-memory data structure store\"}"
+            },
+            "url": {
+              "raw": "{{technology}}/technologies",
+              "host": [
+                "{{technology}}"
+              ],
+              "path": [
+                "technologies"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "1.5. Get - Technologies",
+      "item": [
+        {
+          "name": "Check - Existing Technologies",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{technology}}/technologies/exists?ids={{tech_spring_boot_id}},{{tech_webflux_id}},{{tech_aws_id}}",
+              "host": [
+                "{{technology}}"
+              ],
+              "path": [
+                "technologies",
+                "exists"
+              ],
+              "query": [
+                {
+                  "key": "ids",
+                  "value": "{{tech_spring_boot_id}},{{tech_webflux_id}},{{tech_aws_id}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get - Technology Details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{technology}}/technologies/details?id={{tech_spring_boot_id}}",
+              "host": [
+                "{{technology}}"
+              ],
+              "path": [
+                "technologies",
+                "details"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "{{tech_spring_boot_id}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "2. Setup - Capabilities",
+      "item": [
+        {
+          "name": "Create - Backend Development",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Capability created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('cap_backend_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Backend Development\", \"description\": \"Capacidad para construir APIs y servicios\", \"technologyIds\": [1, 5, 6]}"
+            },
+            "url": {
+              "raw": "{{capability}}/capabilities",
+              "host": [
+                "{{capability}}"
+              ],
+              "path": [
+                "capabilities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - DevOps",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Capability created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('cap_devops_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"DevOps\", \"description\": \"Capacidad para gestionar infraestructura y despliegues\", \"technologyIds\": [2, 4, 6]}"
+            },
+            "url": {
+              "raw": "{{capability}}/capabilities",
+              "host": [
+                "{{capability}}"
+              ],
+              "path": [
+                "capabilities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Database Management",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Capability created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('cap_database_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Database Management\", \"description\": \"Capacidad para diseñar y gestionar bases de datos\", \"technologyIds\": [5, 7, 8]}"
+            },
+            "url": {
+              "raw": "{{capability}}/capabilities",
+              "host": [
+                "{{capability}}"
+              ],
+              "path": [
+                "capabilities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Cloud Architecture",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Capability created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('cap_cloud_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Cloud Architecture\", \"description\": \"Capacidad para diseñar soluciones en la nube\", \"technologyIds\": [3, 4, 8]}"
+            },
+            "url": {
+              "raw": "{{capability}}/capabilities",
+              "host": [
+                "{{capability}}"
+              ],
+              "path": [
+                "capabilities"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "2.5. Get - Capabilities",
+      "item": [
+        {
+          "name": "List - All Capabilities (paginated)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{capability}}/capabilities?page=0&size=20&sort=name,asc",
+              "host": [
+                "{{capability}}"
+              ],
+              "path": [
+                "capabilities"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                },
+                {
+                  "key": "sort",
+                  "value": "name,asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Bulk - Get Capabilities",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{capability}}/capabilities/bulk?ids={{cap_backend_id}},{{cap_devops_id}},{{cap_database_id}}",
+              "host": [
+                "{{capability}}"
+              ],
+              "path": [
+                "capabilities",
+                "bulk"
+              ],
+              "query": [
+                {
+                  "key": "ids",
+                  "value": "{{cap_backend_id}},{{cap_devops_id}},{{cap_database_id}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "3. Setup - Persons",
+      "item": [
+        {
+          "name": "Create - Person 1 (John Doe)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Person created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('person_john_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"John Doe\", \"email\": \"john.doe@example.com\"}"
+            },
+            "url": {
+              "raw": "{{persona}}/persons",
+              "host": [
+                "{{persona}}"
+              ],
+              "path": [
+                "persons"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Person 2 (Jane Smith)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Person created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('person_jane_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Jane Smith\", \"email\": \"jane.smith@example.com\"}"
+            },
+            "url": {
+              "raw": "{{persona}}/persons",
+              "host": [
+                "{{persona}}"
+              ],
+              "path": [
+                "persons"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Person 3 (Carlos García)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Person created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('person_carlos_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Carlos García\", \"email\": \"carlos.garcia@example.com\"}"
+            },
+            "url": {
+              "raw": "{{persona}}/persons",
+              "host": [
+                "{{persona}}"
+              ],
+              "path": [
+                "persons"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Person 4 (María López)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Person created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('person_maria_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"María López\", \"email\": \"maria.lopez@example.com\"}"
+            },
+            "url": {
+              "raw": "{{persona}}/persons",
+              "host": [
+                "{{persona}}"
+              ],
+              "path": [
+                "persons"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Person 5 (Alex Chen)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Person created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('person_alex_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Alex Chen\", \"email\": \"alex.chen@example.com\"}"
+            },
+            "url": {
+              "raw": "{{persona}}/persons",
+              "host": [
+                "{{persona}}"
+              ],
+              "path": [
+                "persons"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "3.5. Get - Persons",
+      "item": [
+        {
+          "name": "Get - John Doe (using captured ID)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Person retrieved successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(200);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.expect(jsonData).to.have.property('name');",
+                  "  pm.expect(jsonData).to.have.property('email');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{persona}}/persons/{{person_john_id}}",
+              "host": [
+                "{{persona}}"
+              ],
+              "path": [
+                "persons",
+                "{{person_john_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get - Jane Smith (using captured ID)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Person retrieved successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(200);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.expect(jsonData).to.have.property('name');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{persona}}/persons/{{person_jane_id}}",
+              "host": [
+                "{{persona}}"
+              ],
+              "path": [
+                "persons",
+                "{{person_jane_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "4. Setup - Bootcamps",
+      "item": [
+        {
+          "name": "Create - Backend Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Bootcamp created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('bootcamp_backend_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Backend Bootcamp\", \"description\": \"Enfocado en desarrollo backend con Spring Boot\", \"releaseDate\": \"2026-04-01\", \"duration\": 10, \"capabilityIds\": [1]}"
+            },
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Cloud & DevOps Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Bootcamp created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('bootcamp_devops_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Cloud & DevOps Bootcamp\", \"description\": \"Enfocado en habilidades de nube y DevOps\", \"releaseDate\": \"2026-05-01\", \"duration\": 12, \"capabilityIds\": [2]}"
+            },
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Full Stack Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Bootcamp created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('bootcamp_fullstack_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Full Stack Bootcamp\", \"description\": \"Enfocado en desarrollo full stack\", \"releaseDate\": \"2026-06-01\", \"duration\": 14, \"capabilityIds\": [1, 3]}"
+            },
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Database Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Bootcamp created successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('bootcamp_database_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Database Bootcamp\", \"description\": \"Especialización en gestión de bases de datos\", \"releaseDate\": \"2026-07-01\", \"duration\": 8, \"capabilityIds\": [3]}"
+            },
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "4.5. Get - Bootcamps",
+      "item": [
+        {
+          "name": "List - All Bootcamps (paginated)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps?page=0&size=10&sortName=name&sortDir=asc",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "key": "sortName",
+                  "value": "name"
+                },
+                {
+                  "key": "sortDir",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List - Bootcamps sorted by capability count",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps?page=0&size=10&sortName=capabilityCount&sortDir=desc",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "key": "sortName",
+                  "value": "capabilityCount"
+                },
+                {
+                  "key": "sortDir",
+                  "value": "desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "5. Enrollments - Using Captured IDs",
+      "item": [
+        {
+          "name": "Enroll - John Doe in Backend Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Enrollment successful', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('enrollment_john_backend_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"personId\": {{person_john_id}}}"
+            },
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps/{{bootcamp_backend_id}}/enrollments",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps",
+                "{{bootcamp_backend_id}}",
+                "enrollments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enroll - Jane Smith in Backend Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Enrollment successful', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('enrollment_jane_backend_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"personId\": {{person_jane_id}}}"
+            },
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps/{{bootcamp_backend_id}}/enrollments",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps",
+                "{{bootcamp_backend_id}}",
+                "enrollments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enroll - Carlos García in Cloud & DevOps Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Enrollment successful', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('enrollment_carlos_devops_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"personId\": {{person_carlos_id}}}"
+            },
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps/{{bootcamp_devops_id}}/enrollments",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps",
+                "{{bootcamp_devops_id}}",
+                "enrollments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enroll - María López in Full Stack Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Enrollment successful', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('enrollment_maria_fullstack_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"personId\": {{person_maria_id}}}"
+            },
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps/{{bootcamp_fullstack_id}}/enrollments",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps",
+                "{{bootcamp_fullstack_id}}",
+                "enrollments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enroll - Alex Chen in Full Stack Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Enrollment successful', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('enrollment_alex_fullstack_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"personId\": {{person_alex_id}}}"
+            },
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps/{{bootcamp_fullstack_id}}/enrollments",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps",
+                "{{bootcamp_fullstack_id}}",
+                "enrollments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enroll - John Doe in Database Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Enrollment successful', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('enrollment_john_database_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"personId\": {{person_john_id}}}"
+            },
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps/{{bootcamp_database_id}}/enrollments",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps",
+                "{{bootcamp_database_id}}",
+                "enrollments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enroll - Jane Smith in Cloud & DevOps Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Enrollment successful', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('enrollment_jane_devops_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"personId\": {{person_jane_id}}}"
+            },
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps/{{bootcamp_devops_id}}/enrollments",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps",
+                "{{bootcamp_devops_id}}",
+                "enrollments"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "6. Reports - Manual Bootcamp Reports",
+      "item": [
+        {
+          "name": "Register - Backend Bootcamp Report",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Report registered successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('reportId');",
+                  "  pm.collectionVariables.set('report_backend_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"bootcampId\": \"{{bootcamp_backend_id}}\", \"bootcampName\": \"Backend Bootcamp\", \"bootcampDescription\": \"Enfocado en desarrollo backend con Spring Boot\", \"releaseDate\": \"2026-04-01\", \"duration\": 10, \"capabilities\": [{\"id\": {{cap_backend_id}}, \"name\": \"Backend Development\", \"description\": \"Capacidad para construir APIs y servicios\", \"technologies\": [{\"id\": {{tech_spring_boot_id}}, \"name\": \"Spring Boot\", \"description\": \"Framework for building Java microservices\"}, {\"id\": {{tech_mysql_id}}, \"name\": \"MySQL\", \"description\": \"Relational database management system\"}]}], \"technologies\": [{\"id\": {{tech_spring_boot_id}}, \"name\": \"Spring Boot\", \"description\": \"Framework for building Java microservices\"}, {\"id\": {{tech_mysql_id}}, \"name\": \"MySQL\", \"description\": \"Relational database management system\"}, {\"id\": {{tech_cicd_id}}, \"name\": \"CI/CD Tools\", \"description\": \"Tools for continuous integration and deployment\"}], \"enrollments\": [{\"personId\": {{person_john_id}}, \"name\": \"John Doe\", \"email\": \"john.doe@example.com\", \"enrollmentDate\": \"2026-02-01T10:00:00\"}, {\"personId\": {{person_jane_id}}, \"name\": \"Jane Smith\", \"email\": \"jane.smith@example.com\", \"enrollmentDate\": \"2026-02-02T14:30:00\"}]}"
+            },
+            "url": {
+              "raw": "{{report}}/reports/bootcamps",
+              "host": [
+                "{{report}}"
+              ],
+              "path": [
+                "reports",
+                "bootcamps"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register - Cloud & DevOps Bootcamp Report",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Report registered successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('report_devops_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"bootcampId\": \"{{bootcamp_devops_id}}\", \"bootcampName\": \"Cloud & DevOps Bootcamp\", \"bootcampDescription\": \"Enfocado en habilidades de nube y DevOps\", \"releaseDate\": \"2026-05-01\", \"duration\": 12, \"capabilities\": [{\"id\": {{cap_devops_id}}, \"name\": \"DevOps\", \"description\": \"Capacidad para gestionar infraestructura y despliegues\", \"technologies\": [{\"id\": {{tech_webflux_id}}, \"name\": \"Webflux\", \"description\": \"Reactive programming model for Spring\"}, {\"id\": {{tech_docker_id}}, \"name\": \"Docker & Kubernetes\", \"description\": \"Containerization and orchestration tools\"}]}], \"technologies\": [{\"id\": {{tech_webflux_id}}, \"name\": \"Webflux\", \"description\": \"Reactive programming model for Spring\"}, {\"id\": {{tech_aws_id}}, \"name\": \"AWS\", \"description\": \"Cloud platform for hosting and services\"}, {\"id\": {{tech_docker_id}}, \"name\": \"Docker & Kubernetes\", \"description\": \"Containerization and orchestration tools\"}], \"enrollments\": [{\"personId\": {{person_carlos_id}}, \"name\": \"Carlos García\", \"email\": \"carlos.garcia@example.com\", \"enrollmentDate\": \"2026-02-03T09:15:00\"}, {\"personId\": {{person_jane_id}}, \"name\": \"Jane Smith\", \"email\": \"jane.smith@example.com\", \"enrollmentDate\": \"2026-02-04T15:45:00\"}]}"
+            },
+            "url": {
+              "raw": "{{report}}/reports/bootcamps",
+              "host": [
+                "{{report}}"
+              ],
+              "path": [
+                "reports",
+                "bootcamps"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register - Full Stack Bootcamp Report",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Report registered successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('report_fullstack_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"bootcampId\": \"{{bootcamp_fullstack_id}}\", \"bootcampName\": \"Full Stack Bootcamp\", \"bootcampDescription\": \"Enfocado en desarrollo full stack\", \"releaseDate\": \"2026-06-01\", \"duration\": 14, \"capabilities\": [{\"id\": {{cap_backend_id}}, \"name\": \"Backend Development\", \"description\": \"Capacidad para construir APIs y servicios\", \"technologies\": [{\"id\": {{tech_spring_boot_id}}, \"name\": \"Spring Boot\", \"description\": \"Framework for building Java microservices\"}, {\"id\": {{tech_mysql_id}}, \"name\": \"MySQL\", \"description\": \"Relational database management system\"}]}, {\"id\": {{cap_database_id}}, \"name\": \"Database Management\", \"description\": \"Capacidad para diseñar y gestionar bases de datos\", \"technologies\": [{\"id\": {{tech_mysql_id}}, \"name\": \"MySQL\", \"description\": \"Relational database management system\"}, {\"id\": {{tech_postgres_id}}, \"name\": \"PostgreSQL\", \"description\": \"Advanced open source database\"}]}], \"technologies\": [{\"id\": {{tech_spring_boot_id}}, \"name\": \"Spring Boot\", \"description\": \"Framework for building Java microservices\"}, {\"id\": {{tech_mysql_id}}, \"name\": \"MySQL\", \"description\": \"Relational database management system\"}, {\"id\": {{tech_postgres_id}}, \"name\": \"PostgreSQL\", \"description\": \"Advanced open source database\"}], \"enrollments\": [{\"personId\": {{person_maria_id}}, \"name\": \"María López\", \"email\": \"maria.lopez@example.com\", \"enrollmentDate\": \"2026-02-04T11:45:00\"}, {\"personId\": {{person_alex_id}}, \"name\": \"Alex Chen\", \"email\": \"alex.chen@example.com\", \"enrollmentDate\": \"2026-02-05T13:20:00\"}]}"
+            },
+            "url": {
+              "raw": "{{report}}/reports/bootcamps",
+              "host": [
+                "{{report}}"
+              ],
+              "path": [
+                "reports",
+                "bootcamps"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register - Database Bootcamp Report",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Report registered successfully', function() {",
+                  "  pm.expect(pm.response.code).to.equal(201);",
+                  "  var jsonData = pm.response.json();",
+                  "  pm.expect(jsonData).to.have.property('id');",
+                  "  pm.collectionVariables.set('report_database_id', jsonData.id);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"bootcampId\": \"{{bootcamp_database_id}}\", \"bootcampName\": \"Database Bootcamp\", \"bootcampDescription\": \"Especialización en gestión de bases de datos\", \"releaseDate\": \"2026-07-01\", \"duration\": 8, \"capabilities\": [{\"id\": {{cap_database_id}}, \"name\": \"Database Management\", \"description\": \"Capacidad para diseñar y gestionar bases de datos\", \"technologies\": [{\"id\": {{tech_mysql_id}}, \"name\": \"MySQL\", \"description\": \"Relational database management system\"}, {\"id\": {{tech_postgres_id}}, \"name\": \"PostgreSQL\", \"description\": \"Advanced open source database\"}, {\"id\": {{tech_redis_id}}, \"name\": \"Redis\", \"description\": \"In-memory data structure store\"}]}], \"technologies\": [{\"id\": {{tech_mysql_id}}, \"name\": \"MySQL\", \"description\": \"Relational database management system\"}, {\"id\": {{tech_postgres_id}}, \"name\": \"PostgreSQL\", \"description\": \"Advanced open source database\"}, {\"id\": {{tech_redis_id}}, \"name\": \"Redis\", \"description\": \"In-memory data structure store\"}], \"enrollments\": [{\"personId\": {{person_john_id}}, \"name\": \"John Doe\", \"email\": \"john.doe@example.com\", \"enrollmentDate\": \"2026-02-06T10:30:00\"}]}"
+            },
+            "url": {
+              "raw": "{{report}}/reports/bootcamps",
+              "host": [
+                "{{report}}"
+              ],
+              "path": [
+                "reports",
+                "bootcamps"
+              ]
+            }
+          },
+          "response": []
+        }
+        ,
+        {
+          "name": "Get - Bootcamp Most Enrolled",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{report}}/reports/bootcamps/most-enrolled",
+              "host": [
+                "{{report}}"
+              ],
+              "path": [
+                "reports",
+                "bootcamps",
+                "most-enrolled"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "7. Update Reports - Enrollment Counts",
+      "item": [
+        {
+          "name": "Update - Backend Bootcamp Enrollment Count",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{report}}/reports/bootcamps/{{report_backend_id}}/enrollment-count?count=2",
+              "host": [
+                "{{report}}"
+              ],
+              "path": [
+                "reports",
+                "bootcamps",
+                "{{report_backend_id}}",
+                "enrollment-count"
+              ],
+              "query": [
+                {
+                  "key": "count",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update - Cloud & DevOps Bootcamp Enrollment Count",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{report}}/reports/bootcamps/{{report_devops_id}}/enrollment-count?count=2",
+              "host": [
+                "{{report}}"
+              ],
+              "path": [
+                "reports",
+                "bootcamps",
+                "{{report_devops_id}}",
+                "enrollment-count"
+              ],
+              "query": [
+                {
+                  "key": "count",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update - Full Stack Bootcamp Enrollment Count",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{report}}/reports/bootcamps/{{report_fullstack_id}}/enrollment-count?count=2",
+              "host": [
+                "{{report}}"
+              ],
+              "path": [
+                "reports",
+                "bootcamps",
+                "{{report_fullstack_id}}",
+                "enrollment-count"
+              ],
+              "query": [
+                {
+                  "key": "count",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update - Database Bootcamp Enrollment Count",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{report}}/reports/bootcamps/{{report_database_id}}/enrollment-count?count=1",
+              "host": [
+                "{{report}}"
+              ],
+              "path": [
+                "reports",
+                "bootcamps",
+                "{{report_database_id}}",
+                "enrollment-count"
+              ],
+              "query": [
+                {
+                  "key": "count",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "8. Cleanup - Delete Operations",
+      "item": [
+        {
+          "name": "Delete - Full Stack Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Bootcamp deleted successfully', function() {",
+                  "  pm.expect(pm.response.code).to.be.oneOf([204, 200]);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps/{{bootcamp_fullstack_id}}",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps",
+                "{{bootcamp_fullstack_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete - Database Bootcamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Bootcamp deleted successfully', function() {",
+                  "  pm.expect(pm.response.code).to.be.oneOf([204, 200]);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{bootcamp}}/bootcamps/{{bootcamp_database_id}}",
+              "host": [
+                "{{bootcamp}}"
+              ],
+              "path": [
+                "bootcamps",
+                "{{bootcamp_database_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete - Technology (by ID)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{technology}}/technologies/{{tech_redis_id}}",
+              "host": [
+                "{{technology}}"
+              ],
+              "path": [
+                "technologies",
+                "{{tech_redis_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete - Capability (by ID)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic_auth}}"
+              }
+            ],
+            "url": {
+              "raw": "{{capability}}/capabilities/{{cap_cloud_id}}",
+              "host": [
+                "{{capability}}"
+              ],
+              "path": [
+                "capabilities",
+                "{{cap_cloud_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "capability",
+      "value": "http://localhost:8083"
+    },
+    {
+      "key": "technology",
+      "value": "http://localhost:8084"
+    },
+    {
+      "key": "bootcamp",
+      "value": "http://localhost:8082"
+    },
+    {
+      "key": "persona",
+      "value": "http://localhost:8081"
+    },
+    {
+      "key": "report",
+      "value": "http://localhost:8085"
+    },
+    {
+      "key": "basic_auth",
+      "value": "YWRtaW46YWRtaW5wYXNzd29yZA=="
+    },
+    {
+      "key": "tech_spring_boot_id",
+      "value": ""
+    },
+    {
+      "key": "tech_webflux_id",
+      "value": ""
+    },
+    {
+      "key": "tech_aws_id",
+      "value": ""
+    },
+    {
+      "key": "tech_docker_id",
+      "value": ""
+    },
+    {
+      "key": "tech_mysql_id",
+      "value": ""
+    },
+    {
+      "key": "tech_cicd_id",
+      "value": ""
+    },
+    {
+      "key": "tech_postgres_id",
+      "value": ""
+    },
+    {
+      "key": "tech_redis_id",
+      "value": ""
+    },
+    {
+      "key": "cap_backend_id",
+      "value": ""
+    },
+    {
+      "key": "cap_devops_id",
+      "value": ""
+    },
+    {
+      "key": "cap_database_id",
+      "value": ""
+    },
+    {
+      "key": "cap_cloud_id",
+      "value": ""
+    },
+    {
+      "key": "person_john_id",
+      "value": ""
+    },
+    {
+      "key": "person_jane_id",
+      "value": ""
+    },
+    {
+      "key": "person_carlos_id",
+      "value": ""
+    },
+    {
+      "key": "person_maria_id",
+      "value": ""
+    },
+    {
+      "key": "person_alex_id",
+      "value": ""
+    },
+    {
+      "key": "bootcamp_backend_id",
+      "value": ""
+    },
+    {
+      "key": "bootcamp_devops_id",
+      "value": ""
+    },
+    {
+      "key": "bootcamp_fullstack_id",
+      "value": ""
+    },
+    {
+      "key": "bootcamp_database_id",
+      "value": ""
+    },
+    {
+      "key": "enrollment_john_backend_id",
+      "value": ""
+    },
+    {
+      "key": "enrollment_jane_backend_id",
+      "value": ""
+    },
+    {
+      "key": "enrollment_carlos_devops_id",
+      "value": ""
+    },
+    {
+      "key": "enrollment_maria_fullstack_id",
+      "value": ""
+    },
+    {
+      "key": "enrollment_alex_fullstack_id",
+      "value": ""
+    },
+    {
+      "key": "enrollment_john_database_id",
+      "value": ""
+    },
+    {
+      "key": "enrollment_jane_devops_id",
+      "value": ""
+    },
+    {
+      "key": "report_backend_id",
+      "value": ""
+    }
+  ]
+}
