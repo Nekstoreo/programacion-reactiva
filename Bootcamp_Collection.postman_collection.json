@@ -1,0 +1,903 @@
+{
+  "info": {
+    "name": "Pruebas Microservicios Bootcamp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "HU-1 — Registrar tecnologías (y otros endpoints de Tecnología)",
+      "item": [
+        {
+          "name": "1. Crear Tecnología 1 (Java)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if(jsonData.id) { pm.collectionVariables.set('tech_1_id', jsonData.id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Java\",\"description\":\"Lenguaje de programación backend\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/technologies",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "technologies"
+              ]
+            }
+          }
+        },
+        {
+          "name": "2. Crear Tecnología 2 (Spring Boot)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if(jsonData.id) { pm.collectionVariables.set('tech_2_id', jsonData.id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Spring Boot\",\"description\":\"Framework backend\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/technologies",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "technologies"
+              ]
+            }
+          }
+        },
+        {
+          "name": "3. Crear Tecnología 3 (Docker)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if(jsonData.id) { pm.collectionVariables.set('tech_3_id', jsonData.id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Docker\",\"description\":\"Contenedores\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/technologies",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "technologies"
+              ]
+            }
+          }
+        },
+        {
+          "name": "4. Crear Tecnología para Eliminar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if(jsonData.id) { pm.collectionVariables.set('tech_delete_id', jsonData.id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Tecnologia Temporal\",\"description\":\"Sera eliminada\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/technologies",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "technologies"
+              ]
+            }
+          }
+        },
+        {
+          "name": "5. Listar Tecnologías",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8084/technologies?page=0&size=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "technologies"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "6. Obtener Tecnología por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8084/technologies/{{tech_1_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "technologies",
+                "{{tech_1_id}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "7. Verificar Tecnologías Existentes",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8084/technologies/exists?ids={{tech_1_id}},{{tech_2_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "technologies",
+                "exists"
+              ],
+              "query": [
+                {
+                  "key": "ids",
+                  "value": "{{tech_1_id}},{{tech_2_id}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "8. Obtener Detalles de Tecnologías",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8084/technologies/details?ids={{tech_1_id}},{{tech_2_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "technologies",
+                "details"
+              ],
+              "query": [
+                {
+                  "key": "ids",
+                  "value": "{{tech_1_id}},{{tech_2_id}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "9. Eliminar Tecnología",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8084/technologies/{{tech_delete_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "technologies",
+                "{{tech_delete_id}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "HU-2 — Registrar capacidades",
+      "item": [
+        {
+          "name": "10. Crear Capacidad (Backend Java)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if(jsonData.id) { pm.collectionVariables.set('cap_1_id', jsonData.id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Backend Java\",\n  \"description\": \"Desarrollo backend con Java\",\n  \"technologyIds\": [{{tech_1_id}}, {{tech_2_id}}, {{tech_3_id}}]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8083/capabilities",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "capabilities"
+              ]
+            }
+          }
+        },
+        {
+          "name": "11. Crear Capacidad para Eliminar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if(jsonData.id) { pm.collectionVariables.set('cap_delete_id', jsonData.id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Capacidad Temporal\",\n  \"description\": \"Para eliminar\",\n  \"technologyIds\": [{{tech_1_id}}, {{tech_2_id}}, {{tech_3_id}}]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8083/capabilities",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "capabilities"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "HU-3 — Listar capacidades (y otros endpoints)",
+      "item": [
+        {
+          "name": "12. Listar Capacidades",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8083/capabilities?page=0&size=10&sort=name,asc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "capabilities"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "key": "sort",
+                  "value": "name,asc"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "13. Obtener Capacidad por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8083/capabilities/{{cap_1_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "capabilities",
+                "{{cap_1_id}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "14. Obtener Capacidades en Bulk",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8083/capabilities/bulk?ids={{cap_1_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "capabilities",
+                "bulk"
+              ],
+              "query": [
+                {
+                  "key": "ids",
+                  "value": "{{cap_1_id}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "15. Eliminar Capacidad",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8083/capabilities/{{cap_delete_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "capabilities",
+                "{{cap_delete_id}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "HU-4 — Registrar bootcamp",
+      "item": [
+        {
+          "name": "16. Crear Bootcamp 1 (Aprende Java)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if(jsonData.id) { pm.collectionVariables.set('bootcamp_1_id', jsonData.id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bootcamp Backend 2026\",\n  \"description\": \"Aprende Java\",\n  \"releaseDate\": \"2026-05-01\",\n  \"duration\": 30,\n  \"capabilityIds\": [{{cap_1_id}}]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8082/bootcamps",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "bootcamps"
+              ]
+            }
+          }
+        },
+        {
+          "name": "17. Crear Bootcamp 2 (Temporal para eliminar)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if(jsonData.id) { pm.collectionVariables.set('bootcamp_delete_id', jsonData.id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bootcamp Temporal\",\n  \"description\": \"Para eliminar\",\n  \"releaseDate\": \"2026-06-01\",\n  \"duration\": 15,\n  \"capabilityIds\": [{{cap_1_id}}]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8082/bootcamps",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "bootcamps"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "HU-5 — Listar bootcamps (y otros endpoints)",
+      "item": [
+        {
+          "name": "18. Listar Bootcamps",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8082/bootcamps?page=0&size=10&sortName=name&sortDir=asc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "bootcamps"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "key": "sortName",
+                  "value": "name"
+                },
+                {
+                  "key": "sortDir",
+                  "value": "asc"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "19. Obtener Bootcamp por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8082/bootcamps/{{bootcamp_1_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "bootcamps",
+                "{{bootcamp_1_id}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "HU-6 — Eliminar bootcamp",
+      "item": [
+        {
+          "name": "20. Eliminar Bootcamp",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8082/bootcamps/{{bootcamp_delete_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "bootcamps",
+                "{{bootcamp_delete_id}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "HU-7 — Inscribirme en bootcamps (y endpoints Personas)",
+      "item": [
+        {
+          "name": "21. Crear Persona",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if(jsonData.id) { pm.collectionVariables.set('person_1_id', jsonData.id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Juan Perez\",\"email\":\"juan.perez4848@example.com\"}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/persons",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "persons"
+              ]
+            }
+          }
+        },
+        {
+          "name": "22. Listar Personas",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8081/persons?page=0&size=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "persons"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "23. Obtener Persona por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8081/persons/{{person_1_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "persons",
+                "{{person_1_id}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "24. Inscribir Persona en Bootcamp",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"personId\": {{person_1_id}}\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8082/bootcamps/{{bootcamp_1_id}}/enrollments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "bootcamps",
+                "{{bootcamp_1_id}}",
+                "enrollments"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "HU-8 — Registrar reporte de bootcamp (y endpoints Reportes)",
+      "item": [
+        {
+          "name": "25. Registrar Reporte Manualmente (Opcional)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bootcampId\": \"{{bootcamp_1_id}}\",\n  \"bootcampName\": \"Bootcamp Backend 2026\",\n  \"bootcampDescription\": \"Aprende Java\",\n  \"releaseDate\": \"2026-05-01\",\n  \"duration\": 30,\n  \"capabilities\": [],\n  \"technologies\": [],\n  \"enrollments\": [],\n  \"capabilityCount\": 1,\n  \"technologyCount\": 3,\n  \"enrollmentCount\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8085/reports/bootcamps",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8085",
+              "path": [
+                "reports",
+                "bootcamps"
+              ]
+            }
+          }
+        },
+        {
+          "name": "26. Añadir Inscripción al Reporte (Opcional)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"personId\": {{person_1_id}},\n  \"name\": \"Juan Perez\",\n  \"email\": \"juan@example.com\",\n  \"enrollmentDate\": \"2026-02-22T00:00:00Z\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8085/reports/bootcamps/{{bootcamp_1_id}}/enrollments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8085",
+              "path": [
+                "reports",
+                "bootcamps",
+                "{{bootcamp_1_id}}",
+                "enrollments"
+              ]
+            }
+          }
+        },
+        {
+          "name": "27. Listar Reportes",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8085/reports/bootcamps",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8085",
+              "path": [
+                "reports",
+                "bootcamps"
+              ]
+            }
+          }
+        },
+        {
+          "name": "28. Obtener Reporte por Bootcamp ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8085/reports/bootcamps/{{bootcamp_1_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8085",
+              "path": [
+                "reports",
+                "bootcamps",
+                "{{bootcamp_1_id}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "HU-9 — Mostrar el bootcamp con mayor cantidad de personas",
+      "item": [
+        {
+          "name": "29. Obtener Bootcamp con Más Inscritos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8085/reports/bootcamps/most-enrolled",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8085",
+              "path": [
+                "reports",
+                "bootcamps",
+                "most-enrolled"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "tech_1_id",
+      "value": ""
+    },
+    {
+      "key": "tech_2_id",
+      "value": ""
+    },
+    {
+      "key": "tech_3_id",
+      "value": ""
+    },
+    {
+      "key": "tech_delete_id",
+      "value": ""
+    },
+    {
+      "key": "cap_1_id",
+      "value": ""
+    },
+    {
+      "key": "cap_delete_id",
+      "value": ""
+    },
+    {
+      "key": "bootcamp_1_id",
+      "value": ""
+    },
+    {
+      "key": "bootcamp_delete_id",
+      "value": ""
+    },
+    {
+      "key": "person_1_id",
+      "value": ""
+    }
+  ]
+}
