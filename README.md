@@ -18,7 +18,7 @@ Sistema de 5 microservicios independientes:
 
 - Java 25+
 - Gradle 9.3.0+
-- MySQL 8.0+
+- MySQL 9.0+
 - MongoDB 4.0+
 
 ## Clonar el proyecto
